@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+//apply plugin:'bbk_checker'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        applicationId "com.eebbk.demo"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs{
+        debug {
+            keyAlias 'imoo'
+            keyPassword 'bbkeebbklinux123'
+            storeFile file('./opt/imoo.jks')
+            storePassword 'bbkeebbk'
+        }
+
+        release {
+            keyAlias 'imoo'
+            keyPassword 'bbkeebbklinux123'
+            storeFile file('/opt/imoo.jks')
+            storePassword 'bbkeebbk'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('BfcVersionUIDemo-release.apk')) {
+                def fileName = outputFile.name;
+                fileName = fileName.replace("BfcVersionUIDemo-release.apk","BfcVersionUI.apk")
+                output.outputFile = new File(file('./../apk'), fileName)
+                println "输出文件位置： " + output.outputFile
+            }
+        }
+    }
+}
+
+dependencies {
+    compile project(':BfcVersionUISdk')
+
+    // 只在debug模式下工作
+    compile bfcBuildConfig.deps["bfc-leakcanary"]
+
+    // 只在debug模式下工作
+    compile bfcBuildConfig.deps["bfc-blockcanary"]
+}

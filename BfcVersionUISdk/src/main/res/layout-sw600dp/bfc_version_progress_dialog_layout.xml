@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bfc_version_color_f5f5f5"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/BFC_INNER_COMMON_DIMEN_25_PX"
+        android:text="@string/bfc_version_ui_app_update"
+        android:textColor="#000000"
+        android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_20_PX"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginLeft="@dimen/BFC_INNER_COMMON_DIMEN_30_PX"
+        android:layout_marginRight="@dimen/BFC_INNER_COMMON_DIMEN_30_PX"
+        android:layout_marginTop="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_40_PX"/>
+
+
+    <TextView
+        android:id="@+id/version_progress_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/progressBar"
+        android:layout_alignStart="@+id/progressBar"
+        android:layout_below="@+id/progressBar"
+        android:layout_marginTop="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_14_PX"
+        android:includeFontPadding="false"
+        android:textColor="#68d415"
+        android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_20_PX"
+        tools:text="10MB"/>
+
+    <TextView
+        android:id="@+id/version_progress_tip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/version_progress_tv"
+        android:layout_alignBottom="@+id/version_progress_tv"
+        android:layout_alignEnd="@+id/progressBar"
+        android:layout_alignRight="@+id/progressBar"
+        android:textColor="#68d415"
+        android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_20_PX"
+        tools:text="@string/bfc_version_ui_clear_space"/>
+
+    <TextView
+        android:id="@+id/version_total_size_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/version_progress_tv"
+        android:layout_alignBottom="@+id/version_progress_tv"
+        android:layout_toEndOf="@+id/version_progress_tv"
+        android:layout_toRightOf="@+id/version_progress_tv"
+        android:includeFontPadding="false"
+        android:textColor="#aaaaaa"
+        android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_20_PX"
+        tools:text="/10MB"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/BFC_INNER_COMMON_DIMEN_1_PX"
+        android:layout_below="@id/version_progress_tv"
+        android:layout_marginTop="@dimen/BFC_INNER_COMMON_DIMEN_25_PX"
+        android:background="#dadada"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/version_exit_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/BFC_INNER_COMMON_DIMEN_60_PX"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/bfc_version_ui_exit"
+            android:textColor="@color/bfc_version_color_000000"
+            android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_22_PX"
+            android:visibility="gone"/>
+
+        <View
+            android:id="@+id/version_vertical_divider"
+            android:layout_width="@dimen/BFC_INNER_COMMON_DIMEN_1_PX"
+            android:layout_height="match_parent"
+            android:background="#dadada"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/version_skip_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/BFC_INNER_COMMON_DIMEN_60_PX"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="@string/bfc_version_ui_try_again"
+            android:textColor="#68d415"
+            android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_22_PX"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</RelativeLayout>

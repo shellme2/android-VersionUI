@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_dialog_subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/BFC_INNER_COMMON_DIMEN_30_PX"
+        android:layout_marginRight="@dimen/BFC_INNER_COMMON_DIMEN_25_PX"
+        android:layout_marginTop="@dimen/BFC_INNER_COMMON_DIMEN_7_PX"
+        android:includeFontPadding="false"
+        android:textColor="@color/bfc_version_color_363636"
+        android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_20_PX"
+        tools:text="微信检测到新版本 V1.0.0 "/>
+
+    <TextView
+        android:id="@+id/tv_dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/BFC_INNER_COMMON_DIMEN_30_PX"
+        android:layout_marginRight="@dimen/BFC_INNER_COMMON_DIMEN_25_PX"
+        android:layout_marginTop="@dimen/bfc_version_ui_tv_margin_top"
+        android:lineSpacingExtra="@dimen/BFC_INNER_COMMON_DIMEN_4_PX"
+        android:includeFontPadding="false"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="@dimen/BFC_INNER_COMMON_DIMEN_30_PX"
+        android:textColor="@color/bfc_version_color_363636"
+        android:textSize="@dimen/BFC_INNER_COMMON_DIMEN_TEXT_20_PX"
+        tools:text="微信检测到新版本 V1.0.0 "/>
+
+
+</LinearLayout>

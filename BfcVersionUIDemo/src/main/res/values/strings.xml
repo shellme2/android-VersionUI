@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_nameas">版本s更新</string>
+    <string name="test_tip">本demo已经集成BfcLeakCanary、BfcBlockCanary、StrictMode严苛模式，可在桌面分别进入查看，当Leaks或Blocks中出现内容，或应用出现闪退请保留日志文件找联系黄邵雄</string>
+</resources>

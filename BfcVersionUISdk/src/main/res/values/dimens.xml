@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bfc_version_ui_tv_margin_top">@dimen/BFC_INNER_COMMON_DIMEN_4_PX</dimen>
+</resources>
